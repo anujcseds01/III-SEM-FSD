@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Marks Calculator</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    background:#f2f2f2;
+}
+.box{
+    background:rgb(9, 206, 153);
+    width:300px;
+    margin:auto;
+    padding:50px;
+    border-radius:10px;
+}
+input,button{
+    margin:5px;
+    padding:5px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Student Calculator</h2>
+Enter No. of Subjects:
+<input type="number" id="subjects">
+<br><br>
+<button onclick="calculate()">Calculate</button>
+<p id="result"></p>
+</div>
+<script>
+function calculate(){
+let n = document.getElementById("subjects").value;
+let total = 0;
+for(let i=1;i<=n;i++){
+let marks = prompt("Enter marks for subject " + i);
+total = total + Number(marks);
+}
+let avg = total/n;
+document.getElementById("result").innerHTML =
+"Total Marks = " + total + "<br>Average = " + avg;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!-- Save this as index.html and open it in browser -->
+<!-- FULL UPDATED CODE WITH WORKING ADD TO CART -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Curbside Delights</title>
+
+  <style>
+
+    body{
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    /* HEADER */
+
+    header{
+      background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    header h1{
+      font-size: 50px;
+      margin: 0;
+      background-color: rgba(0,0,0,0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    header p{
+      font-size: 20px;
+      margin-top: 10px;
+      background-color: rgba(0,0,0,0.5);
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 8px;
+    }
+
+    /* CONTAINER */
+
+    .container{
+      width: 80%;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    /* FOOD CARD */
+
+    .food-card{
+      background-color: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px gray;
+      text-align: center;
+    }
+
+    .food-card img{
+      width: 250px;
+      height: 180px;
+      border-radius: 10px;
+    }
+
+    button{
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover{
+      background-color: darkgreen;
+    }
+
+    /* CART */
+
+    #cart{
+      background-color: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px gray;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <h1>Curbside Delights</h1>
+
+    <p>Delicious Food Delivered To Your Doorstep</p>
+
+  </header>
+
+  <!-- MAIN CONTAINER -->
+
+  <div class="container">
+
+    <!-- BURGER -->
+
+    <div class="food-card">
+
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Burger">
+
+      <h2>Burger</h2>
+
+      <p>Price: ₹120</p>
+
+      <button onclick="addToCart('Burger',120)">
+        Add to Cart
+      </button>
+
+    </div>
+
+    <!-- PIZZA -->
+
+    <div class="food-card">
+
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pizza">
+
+      <h2>Pizza</h2>
+
+      <p>Price: ₹250</p>
+
+      <button onclick="addToCart('Pizza',250)">
+        Add to Cart
+      </button>
+
+    </div>
+
+    <!-- FRENCH FRIES -->
+
+    <div class="food-card">
+
+      <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877" alt="Fries">
+
+      <h2>French Fries</h2>
+
+      <p>Price: ₹90</p>
+
+      <button onclick="addToCart('French Fries',90)">
+        Add to Cart
+      </button>
+
+    </div>
+
+    <!-- CART SECTION -->
+
+    <div id="cart">
+
+      <h2>Your Cart</h2>
+
+      <ul id="cartItems"></ul>
+
+      <h3>Total: ₹<span id="total">0</span></h3>
+
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    let total = 0;
+
+    function addToCart(itemName, itemPrice){
+
+      // Create list item
+      let li = document.createElement("li");
+
+      li.innerText = itemName + " - ₹" + itemPrice;
+
+      // Add item to cart
+      document.getElementById("cartItems").appendChild(li);
+
+      // Update total
+      total = total + itemPrice;
+
+      document.getElementById("total").innerText = total;
+
+    }
+
+  </script>
+
+</body>
+
+</html>

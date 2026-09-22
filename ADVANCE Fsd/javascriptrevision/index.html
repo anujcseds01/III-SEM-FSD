@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> My First Javascript program</h2>
+    <button onclick = "runcode()" > Run Code</button>
+    <p id ="results"></p>
+    <script>
+        function runcode ()
+{
+    let number1= 6 ;
+    let number2=7;
+    let sum = number1+ number2;
+    document.getElementById("results").innerText = "The sum is: " + sum;
+
+}  
+
+
+  </script>
+
+  <h3> Data types exampkes</h3>
+  <button onclick = "runcode2()"> Run code </button>
+  <p id ="results2"></p>
+  <script>
+    function runcode2(){
+        let name= "john";
+        let age=25;
+        let isstudent= true;
+       document.getElementById("results2").innerText= 
+"Name: " + name + "| Age: " + age + "| Is student: " + isstudent;
+    }
+  </script>
+
+  <h3> operators </h3>
+  <button onclick ="runcode3()"> Run code</button>
+  <p id ="results3"></p>
+  <script>
+    function runcode3(){
+    let number1=6;
+    let number2=2;
+    let  sum= number1+number2;
+    let sub=number1-number2;
+    let mul= number1*number2;
+    let div= number1/number2;
+    document.getElementById("results3").innerText= "Sum: " + sum + "| Sub: " + sub + "| Mul: " + mul + "| Div: " + div;
+    }
+    </script>
+
+    <h3> IF ELSE EXAMPLE </h3>
+
+    <button onclick ="runcode4()"> Run code </button>
+    <p id ="results4"></p>
+
+    <script>
+        function runcode4(){
+            let marks =86;
+            if (marks>=90){
+                document.getElementById("results4").innerText="Grade A";
+            }
+
+           else if  (marks>=75){
+                document.getElementById("results4").innerText="Grade B";
+            }
+            else {
+                document.getElementById(results4).innerText = "Grade C ";
+            }
+        }
+    </script>
+  <h4> Arrays examples </h4>
+  <button onclick="runcode5()">Run code</button>
+  <p id ="results5"></p>
+  <script>
+    function runcode5(){
+        let students=["Aman","Riya","Karan"];
+        let First = students[0];
+        let total=students.length;
+        students.push("Sneha");
+
+        document.getElementById("results5").innerText= "First:" +first+ "|" +" total:" + total + "|" +"After Add:" + students; 
+      }
+    
+  </script>
+
+  <h2> OBJECTS </h2>
+  <button onclick="runcode6()" > Run code </button>
+  <p id ="results6"></p>
+
+ <script>
+function runcode6(){
+    let student ={
+        Name: "Aman",
+        age:26,
+        marks:85,
+
+    };
+
+    let studentName = students.Name;
+
+    let studentAge = student["Age"];
+    student.marks=90;
+
+    document.getElementById("results6").innerText= "Name:"+ studentName"|"+"Age:"+ studentAge +|"|" +
+    "updated Marks: " +student.marks;
+}
+
+</script>
+
+<h2>DOM manuplation</h2>
+<button onclick="runcode7()">Run code</button>
+<p id=""demotext> This text will change when you click Run.</p>
+
+<script>
+    function runcode7(){
+        document.getElementById("demotext").innerText="Hello! javascript changed this text.";
+        document.getElemntById("demotext").style.color = "green";
+    }
+</script>
+
+<h2> Events Example</h2>
+
+  <button onclick="setupEvent()">setup Events (run once)</button>
+  <button id="clickMeBtn">click Me!</button>
+  
+
+  <script>
+
+    function setupEvent(){
+        document.getElementById("clickMeBtn").addEventListener("click", function(){
+            alert("you clicked the button!");
+        });
+        }
+    
+  </script>
+
+
+</body>
+</html>

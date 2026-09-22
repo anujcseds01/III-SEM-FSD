@@ -1,0 +1,17 @@
+<input type="text" id="taskInput" placeholder="Enter your task">
+<button id ="addbtn">Add</button>
+<ul id ="tasklist"></ul>
+
+<script>
+    document.getElementById("addbtn").addEventListener("click", function() {
+      const input = document.getElementById("taskInput");
+      if (input.value.trim() !== "") return;
+      const li = document.createElement("li");
+      li.textContent = input.value;
+        document.getElementById("tasklist").appendChild(li);
+        input.value = "";
+    });
+</script>
+ 
+  //This code is trying to create a To-Do List, 
+  where you type a task and click Add to put the task into a list.
